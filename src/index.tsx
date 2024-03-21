@@ -9,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <section id="wrapper" className="flex w-full h-screen justify-center items-center">
+      <App />
+    </section>
   </React.StrictMode>
 );
 
