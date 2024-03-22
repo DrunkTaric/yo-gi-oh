@@ -7,6 +7,14 @@ export interface AuthInterface {
   }
 }
 
+export interface UiInterface {
+  focus: "none" | "chat"
+  chat: {
+    opened: boolean
+    typing: boolean
+  }
+}
+
 export interface LevelInterface {
   type: string
 }
