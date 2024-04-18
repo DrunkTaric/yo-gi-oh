@@ -3,15 +3,16 @@ import Message from "../components/Message";
 import { useAtom } from "../jotai";
 import { Ui } from "../states";
 
-const Opened = () => {
-    const [UiState, setUiState] = useAtom(Ui)
+const Opened = (props: {state: [any, Function]}) => {
+
+    const [State, setState] = props.state 
 
     useEffect(() => {
         const data = {
-            ...UiState,
+            ...State,
             focus: "chat"
         }
-        setUiState(data)
+        setState(data)
     }, [])
 
     return (
@@ -41,15 +42,35 @@ const Opened = () => {
     )
 }
 
-const Closed = () => {
-    const [UiState, setUiState] = useAtom(Ui)
+const Closed = (props: {state: [any, Function]}) => {
+
+    const [State, setState] = props.state 
+    
+    useEffect(() => {
+        document.addEventListener("keyup", (e) => {
+            if (e.key == "Enter") {
+                setState({
+                    ...State,
+                    chat: {
+                        opened: true,
+                        typing: false
+                    }
+                })
+                console.log(State)
+            }
+        })
+
+        return (() => {
+            //document.removeEventListener("keyup")
+        })
+    }, [])
 
     function showChat() {
-        setUiState({
-            ...UiState,
+        setState({
+            ...State,
             chat: {
                 opened: true,
-                typing: UiState.chat.typing
+                typing: State.chat.typing
             }
         })
     }
@@ -71,8 +92,9 @@ const Closed = () => {
 
 export default function Chat() {
     const [UiState, setUiState] = useAtom(Ui)
+
     if (UiState?.chat?.opened) {
-        return <Opened></Opened>
+        return <Opened state={[UiState, setUiState]}></Opened>
     }
-    return <Closed></Closed>   
+    return <Closed state={[UiState, setUiState]}></Closed>   
 }
