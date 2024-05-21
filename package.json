@@ -1,43 +1,27 @@
 {
-  "name": "yo-gi-oh",
+  "homepage": "https://github.com/belferink1996/MERN-template#readme",
+  "name": "mern-application",
   "version": "0.1.0",
+  "description": "",
   "private": true,
-  "dependencies": {
-    "@pixi/react": "^7.1.2",
-    "@react-spring/web": "^9.7.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.91",
-    "@types/react": "^18.2.67",
-    "@types/react-dom": "^18.2.22",
-    "pixi.js": "^8.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+  "main": "",
+  "license": "ISC",
+  "keywords": [],
+  "author": "Ben Elferink <ben.elferink@icloud.com> (https://www.linkedin.com/in/ben-elferink-37ba251b9)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belferink1996/MERN-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/belferink1996/MERN-template/issues",
+    "email": "ben.elferink@icloud.com"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "install": "concurrently \"cd ./server && npm i\" \"cd ./client && npm i\"",
+    "start": "concurrently \"cd ./server && npm start\" \"cd ./client && npm start\"",
+    "delete-modules": "rm -r ./node_modules && cd ./server && rm -r ./node_modules && cd ../client && rm -r ./node_modules"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "concurrently": "^6.3.0"
   }
 }

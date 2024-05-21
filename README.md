@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# MERN Stack Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src='https://github.com/belferink1996/MERN-template/blob/images/images/mern.jpeg' alt='MERN banner' width='700' />
 
-## Available Scripts
+- **M** = [MongoDB](https://www.mongodb.com)
+- **E** = [Express.js](https://expressjs.com)
+- **R** = [React.js](https://reactjs.org)
+- **N** = [Node.js](https://nodejs.org)
 
-In the project directory, you can run:
+<br />
+<br />
 
-### `npm start`
+# What is this template?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This template allows you to quick-start your Fullstack application using the MERN stack, it has a server setup with some basic authentication, and a client ready to communicate with the backend.<br />
+I have attempted to use the best practices for both ends, which should make it easy for any advanced/new developer to use, and perhaps learn from.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src='https://github.com/belferink1996/MERN-template/blob/images/images/Screen%20Shot%202021-09-29%20at%2011.08.23.png' width='700' />
 
-### `npm test`
+<br />
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# How to use this template
 
-### `npm run build`
+[📀 Demo video](https://youtu.be/N2pvvkyoS68)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### STEP 1:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Click ["Use this template"](https://github.com/benelferink/MERN-template/generate) to generate a
+new repository.<br />
+Then open your terminal and clone your repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> cd ~/Desktop <br />
+> git clone https://github.com/[your-user-name]/[your-repo-name].git
 
-### `npm run eject`
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### STEP 2:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Go to the root of your repository's folder, and install all dependecies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> cd ~/Desktop/[your-repo-name]<br />
+> npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br />
 
-## Learn More
+### STEP 3:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Prepare your MongoDB database ([atlas](https://www.mongodb.com/cloud/atlas),
+[community](<https://github.com/benelferink/MERN-template/wiki/Install-MongoDB-Community-Server-(MacOS)>)).<br />
+Then configure your database within `server/constants/index.js`, by configuring the `MONGO_URI` variable.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
+
+### STEP 4: CODE !!!
+
+<br />
+<br />
+
+### To run the client and/or the server, you can do any of the following:
+
+From the `root` of your project run:
+> npm start
+
+#### OR
+
+Open terminal #1 (backend)
+> cd ./server<br />
+> npm start
+
+Open terminal #2 (frontend)
+> cd ./client<br />
+> npm start
